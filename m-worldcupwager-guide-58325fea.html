@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据的门廊 · 世界杯投注延伸阅读</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #fceecc 0%, #f7d9a8 70%, #f2ca8c 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      padding: 2.4rem 1.8rem 3rem;
+    }
+
+    .page-card {
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto;
+      background: #fffffffa;
+      border-radius: 42px 18px 42px 18px;
+      box-shadow: 0 20px 40px -12px rgba(145, 85, 25, 0.25), 0 8px 16px -6px rgba(0,0,0,0.08);
+      padding: 2.8rem 2.4rem 3rem;
+      backdrop-filter: blur(2px);
+      transition: all 0.2s ease;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 1.2rem 0.8rem 2rem;
+      }
+      .page-card {
+        padding: 1.8rem 1.2rem 2rem;
+        border-radius: 28px 10px 28px 10px;
+      }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #402a17;
+      border-left: 6px solid #dba56d;
+      padding-left: 1.2rem;
+      margin-bottom: 0.6rem;
+      word-break: break-word;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #7c5f3f;
+      margin-bottom: 2.2rem;
+      padding-left: 1.8rem;
+      font-style: normal;
+      border-bottom: 1px dashed #e5c8a5;
+      padding-bottom: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .intro {
+      background: #faf2e7;
+      border-radius: 24px 8px 24px 8px;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 2.4rem;
+      color: #3d2c1b;
+      font-size: 1rem;
+      line-height: 1.7;
+      box-shadow: inset 0 1px 4px rgba(190, 140, 80, 0.08);
+    }
+
+    .intro strong {
+      color: #8b5f34;
+      font-weight: 500;
+    }
+
+    .body-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #2d231a;
+    }
+
+    .body-text p {
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-card {
+      background: #fef7ec;
+      border-left: 6px solid #dba56d;
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0 2rem;
+      border-radius: 0 20px 20px 0;
+      color: #4f3922;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .quote-card span {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: 350;
+      color: #7b5b39;
+    }
+
+    .link-sentence {
+      background: #fef2e0;
+      padding: 1.0rem 1.8rem;
+      border-radius: 60px 12px 60px 12px;
+      display: inline-block;
+      margin: 1.2rem 0 0.8rem;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .link-sentence a {
+      color: #9b6e3d;
+      background: #fff6ea;
+      padding: 0.15rem 0.7rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      border: 1px solid #e5c097;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+
+    .link-sentence a:hover {
+      background: #dba56d;
+      color: #2f1f0e;
+      border-color: #b88244;
+      box-shadow: 0 2px 8px rgba(170, 110, 30, 0.2);
+    }
+
+    .faq-mini {
+      margin-top: 2.4rem;
+      padding-top: 1.2rem;
+      border-top: 2px dotted #dfc1a0;
+    }
+
+    .faq-mini h3 {
+      font-weight: 450;
+      color: #4d3420;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    .faq-item {
+      display: flex;
+      gap: 0.8rem 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .faq-q {
+      min-width: 6em;
+      font-weight: 500;
+      color: #6f4d28;
+    }
+
+    .faq-a {
+      flex: 1;
+      color: #3b2d1e;
+      line-height: 1.6;
+    }
+
+    .closing-note {
+      margin-top: 2.6rem;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #76583b;
+      border-top: 1px solid #eedbc2;
+      padding-top: 1.6rem;
+      font-style: normal;
+    }
+
+    .closing-note a {
+      color: #7b562f;
+      text-decoration: none;
+      border-bottom: 1px dotted #c9a77e;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ebd9c2;
+      margin: 1.8rem 0 0.8rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page-card">
+  <h1>日常查询 · 对照与延伸</h1>
+  <div class="subhead">让信息回到手边，而不是淹没在推送里</div>
+
+  <div class="intro">
+    <strong>⚽ 为什么需要一份“对照”页面？</strong><br>
+    投注前的资讯比对、赔率结构的理解、赛程与数据的交叉验证——这些动作往往发生在深夜的笔记本、浏览器标签页之间。与其依赖社交平台上的片段消息，不如搭建一个安静的门廊，随时查阅、延伸、做笔记。
+  </div>
+
+  <div class="body-text">
+    <p>对于经常关注国际赛事的用户来说，<strong>世界杯投注</strong>不仅仅是一个行动指令，更是一种信息梳理的习惯。从小组赛的出线形势到淘汰赛的战术博弈，每一组数字背后都藏着队伍近期的状态曲线。把查询变成日常，让数据自己说话。</p>
+
+    <p>很多人会把投注前的时间花在“比较”上：比较不同来源的盘口变化，比较历史交锋记录，比较球员的伤病列表与天气影响。这种对照阅读的方式，恰恰需要一份稳定的索引页——不是推销，而是一个安静的起点。你可以随时打开它，逐条核对，然后回到自己的判断。</p>
+
+    <p>页面下方的引用卡片，整理自用户社区里常见的查询习惯。它们不是操作指南，而是一些值得留意的思考角度。</p>
+  </div>
+
+  <div class="quote-card">
+    “世界杯期间的投注信息流动极快，但真正有用的往往是赛前72小时内的稳定数据和队伍大名单。与其追逐每条碎片消息，不如建立自己的查询节奏：先看阵容，再看近五场平均射门与控球率，最后对照赔率结构。很多人忽略了这个顺序。”
+    <span>—— 摘录自社区讨论 · 2026预选赛笔记</span>
+  </div>
+
+  <div class="body-text">
+    <p>这份页面正是为此而生。它不提供实时比分，也不承诺任何结果，而是作为一张折叠的工作台：放好你的对照表、笔记链接、以及常用的几个参考入口。其中也包括了你自己可能经常需要点开的 <span class="link-sentence"><a href="https://m-worldcupwager.com">世界杯投注</a></span> 页面——它被放在这里，是因为很多人在做赛前查询时会顺带打开，当作信息拼图的一角。</p>
+
+    <p>延伸阅读并不等于漫无目的地浏览。你可以把下面几个常见问题看作索引的起点，它们覆盖了大多数用户在开赛前三天会反复确认的事情。</p>
+  </div>
+
+  <div class="faq-mini">
+    <h3>📋 查询时常见的几个对照点</h3>
+    <div class="faq-item">
+      <span class="faq-q">阵容更新</span>
+      <span class="faq-a">确认最新一期国家队大名单，注意伤病替换与停赛累积，尤其是中场与后防核心。</span>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">近期走势</span>
+      <span class="faq-a">最近五场正式比赛的进球/失球分布，主客场差异往往比想象中更明显。</span>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">赔率结构</span>
+      <span class="faq-a">不同平台的初始赔率与即时赔率对比，注意平赔的凝聚程度——它常常暗示比赛的真实走向。</span>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">天气与场地</span>
+      <span class="faq-a">当地比赛时间的温度、湿度以及草坪类型，对技术型球队的影响不可忽视。</span>
+    </div>
+    <hr>
+    <div style="font-size: 0.95rem; color: #5a452f; padding: 0.2rem 0 0.4rem;">
+      💡 延伸阅读不是一次性的工作，而是每次赛前花15分钟养成的小习惯。对照表可以手写，也可以用电子文档——关键是保持自己的节奏。
+    </div>
+  </div>
+
+  <div class="closing-note">
+    日常查询入口 · <a href="https://m-worldcupwager.com">世界杯投注</a> 信息页
+  </div>
+</div>
+</body>
+</html>
